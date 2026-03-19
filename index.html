@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Custom UI Tooltip -->
+        <div id="custom-tooltip"></div>
+        
+        <!-- Golden Cookie Overlay -->
+        <div id="golden-cookie" class="hidden"></div>
+        
+        <!-- Left Panel: The Cookie -->
+        <section id="cookie-panel">
+            <div class="bakery-name-container" style="margin-top:20px; font-size:1.5rem; font-weight:600; color:rgba(255,255,255,0.8); background:rgba(0,0,0,0.3); padding:5px 20px; border-radius:20px;">
+                <span id="bakery-name" contenteditable="true" spellcheck="false" title="Click to rename your bakery!" style="border-bottom: 1px dashed rgba(255,255,255,0.3); outline:none;">Player</span>'s Bakery
+            </div>
+            <div id="cookie-counter-container">
+                <div id="cookie-count">0</div>
+                <div id="cookie-label">cookies</div>
+                <div id="cps-display">per second: <span id="cps-value">0</span></div>
+            </div>
+            
+            <div id="big-cookie-container">
+                <div id="cursor-ring"></div>
+                <img id="big-cookie" src="assets/big_cookie.svg" alt="Big Cookie" draggable="false" />
+            </div>
+        </section> <!-- End Left Panel -->
+
+        <!-- Middle Panel: Log, Stats, Buildings list -->
+        <section id="middle-panel">
+            <div id="news-ticker">
+                <span id="news-text">Welcome to your new bakery!</span>
+            </div>
+            <div id="middle-nav">
+                <button class="nav-btn active" data-target="buildings-container">Buildings</button>
+                <button class="nav-btn" data-target="stats-container">Stats</button>
+                <button class="nav-btn" data-target="achievements-container">Achievements</button>
+                <button class="nav-btn" data-target="settings-container">Options</button>
+            </div>
+            <div id="middle-content">
+                <div id="buildings-container" class="tab-content active"></div>
+                <div id="stats-container" class="tab-content">
+                    <div class="placeholder-text">Stats (Loading...)</div>
+                </div>
+                <div id="achievements-container" class="tab-content">
+                    <div class="placeholder-text">Achievements will appear here</div>
+                </div>
+                <div id="settings-container" class="tab-content">
+                    <div class="settings-group">
+                        <h3>Save/Load</h3>
+                        <button id="btn-save" class="action-btn">Save Game</button>
+                        <button id="btn-load" class="action-btn">Load Game</button>
+                        <button id="btn-wipe" class="action-btn danger">Wipe Save</button>
+                    </div>
+                    <div class="settings-group">
+                        <h3>Preferences</h3>
+                        <label style="cursor:pointer; display:block; margin-bottom:10px;">
+                            <input type="checkbox" id="toggle-autosave" checked> Enable Autosave
+                        </label>
+                        <label style="cursor:pointer; display:block; margin-bottom:10px;">
+                            <input type="checkbox" id="toggle-particles" checked> Show click particles
+                        </label>
+                        <label style="cursor:pointer; display:block; margin-bottom:10px;">
+                            <input type="checkbox" id="toggle-cursors" checked> Show orbiting cursors
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel: Upgrades and Store -->
+        <section id="store-panel">
+            <div id="store-header">Store</div>
+            <div id="upgrades-container">
+                <!-- Upgrades will go here in Phase 3 -->
+            </div>
+            <div id="store-items">
+                <!-- Javascript will populate this -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

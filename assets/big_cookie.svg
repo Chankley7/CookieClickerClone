@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Base cookie gradient -->
+    <radialGradient id="cookieGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#E8C396" />
+      <stop offset="70%" stop-color="#C29255" />
+      <stop offset="100%" stop-color="#996622" />
+    </radialGradient>
+    
+    <!-- Shadow for texture -->
+    <radialGradient id="chipGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4A3018" />
+      <stop offset="80%" stop-color="#2D1A08" />
+      <stop offset="100%" stop-color="#1A0D00" />
+    </radialGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur stdDeviation="5" result="offset-blur"/>
+      <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+      <feFlood flood-color="black" flood-opacity="0.4" result="color"/>
+      <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+      <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Base Cookie -->
+  <circle cx="100" cy="100" r="90" fill="url(#cookieGrad)" filter="url(#shadow)"/>
+  
+  <!-- Texture overlay -->
+  <circle cx="100" cy="100" r="90" fill="transparent" stroke="#B07D40" stroke-width="2" opacity="0.5"/>
+  <circle cx="100" cy="100" r="90" fill="transparent" filter="url(#innerShadow)"/>
+
+  <!-- Chocolate Chips -->
+  <path d="M 60 50 Q 65 40 75 45 Q 80 55 70 60 Q 60 60 60 50" fill="url(#chipGrad)" />
+  <path d="M 120 40 Q 130 35 140 45 Q 135 55 125 50 Q 115 45 120 40" fill="url(#chipGrad)" />
+  <path d="M 150 90 Q 160 85 165 95 Q 160 105 150 100 Q 140 95 150 90" fill="url(#chipGrad)" />
+  <path d="M 130 140 Q 135 130 145 135 Q 150 145 140 150 Q 130 150 130 140" fill="url(#chipGrad)" />
+  <path d="M 80 150 Q 90 140 100 145 Q 105 155 95 160 Q 85 160 80 150" fill="url(#chipGrad)" />
+  <path d="M 40 110 Q 50 100 60 105 Q 65 115 55 120 Q 45 120 40 110" fill="url(#chipGrad)" />
+  <path d="M 90 90 Q 100 80 110 85 Q 115 95 105 100 Q 95 100 90 90" fill="url(#chipGrad)" />
+  
+  <circle cx="50" cy="70" r="8" fill="url(#chipGrad)" />
+  <circle cx="100" cy="120" r="10" fill="url(#chipGrad)" />
+  <circle cx="110" cy="65" r="7" fill="url(#chipGrad)" />
+
+  <!-- Little craters/texture divots -->
+  <circle cx="80" cy="70" r="4" fill="#A87A40" opacity="0.6" />
+  <circle cx="130" cy="110" r="5" fill="#A87A40" opacity="0.6" />
+  <circle cx="60" cy="130" r="3" fill="#A87A40" opacity="0.6" />
+  <circle cx="100" cy="40" r="6" fill="#A87A40" opacity="0.6" />
+  <circle cx="160" cy="130" r="4" fill="#A87A40" opacity="0.6" />
+  <circle cx="40" cy="90" r="5" fill="#A87A40" opacity="0.6" />
+
+</svg>
